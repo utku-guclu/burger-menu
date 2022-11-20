@@ -1,6 +1,8 @@
 :root {
   --bg: #333;
   --coral: lightcoral;
+  --main: wheat;
+  --dark: rgb(31, 28, 28);
 }
 
 * {
@@ -31,7 +33,7 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: rgb(31, 28, 28);
+  background-color: var(--dark);
 }
 
 header ul {
@@ -50,15 +52,70 @@ header {
   padding: 0 20px;
 }
 
+main h1 {
+  text-align: center;
+  color: var(--main);
+  font-size: 48px;
+}
 
 #logo {
   font-size: 24px;
   font-weight: bold;
-  color: var(--coral);
+  color: var(--main);
   text-transform: uppercase;
   transition: all 0.5s ease-out;
 }
 
 #logo:hover {
   transform: scale(1.2);
+}
+
+#special-menu {
+  margin: 50px auto
+}
+
+#special-menu ul {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 16px;
+  margin: 0;
+  padding: 0;
+}
+
+.menu-item {
+  background-color: var(--main);
+  border-radius: 4px;
+}
+
+.menu-item__image {
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+img {
+  max-width: 100%;
+}
+
+.menu-item img {
+  object-fit: cover;
+  transition: transform 750ms cubic-bezier(.5, 0, .5, 1), opacity 250ms linear;
+}
+
+.menu-item img:hover {
+  transform: scale(1.2);
+}
+
+.menu-item__content {
+  padding: 16px;
+  text-align: center;
+}
+
+.btn {
+  background-color: var(--bg);
+  padding: 8px 12px;
+  border-radius: 4px;
+}
+
+.btn:hover {
+  transform: scale(2);
 }
